@@ -17,7 +17,7 @@ Ce projet est un bot Discord développé en Python utilisant la bibliothèque `d
 
 3. Configurez les tokens dans le fichier `secu.py` :
     ```python
-    # filepath: c:\Users\trist\Documents\BOT\OLD_AMG\Bot_AMG_PY\secu.py
+    #.\Bot_AMG_PY\secu.py
     TOKEN_kowzy = 'VOTRE_TOKEN_KOWZY'
     TOKEN_soydex = 'VOTRE_TOKEN_SOYDEX'
     TOKEN_test = 'VOTRE_TOKEN_TEST'
