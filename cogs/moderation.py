@@ -32,7 +32,6 @@ class ModerationCommands(commands.Cog):
 
     @commands.command(name= "ajouter_role")
     async def ajouter_role(self,ctx,nom_role, user: discord.Member):
-
         guild = ctx.guild
         role = discord.utils.get(guild.roles, name=nom_role)
         if role is not None:
@@ -45,17 +44,13 @@ class ModerationCommands(commands.Cog):
     async def move_all(self, ctx):
         "téléporte tous les utilisateurs dans mon salon vocal"
         author_voice_channel = ctx.author.voice.channel
-        
         if author_voice_channel is None:
             await ctx.send("Vous devez être connecté à un salon vocal pour utiliser cette commande.")
             return
-
         for member in ctx.guild.members:  # Itérer à travers les membres du serveur
             if member.voice is not None and member.voice.channel is not None:  # Vérifier si le membre est connecté à un salon vocal
                 await member.move_to(author_voice_channel)
-        
         await ctx.send(f"Tous les membres ont été déplacés vers {author_voice_channel.name}.")
-
 
     @commands.command()
     async def voc(self,ctx):
@@ -63,13 +58,11 @@ class ModerationCommands(commands.Cog):
         for guild in self.client.guilds:
             for voice_channel in guild.voice_channels:
                 voice_channel_members += len(voice_channel.members)
-        
         embed = discord.Embed(title="Personnes en vocal", description=".gg/antimg")
         embed.set_author(name=self.client.user.display_name, url="https://discord.com/invite/antimg", icon_url=self.client.user.avatar.url if self.client.user.avatar else None)
         embed.set_thumbnail(url=ctx.guild.icon.url if ctx.guild.icon else None)
         embed.add_field(name="Vocaux", value=f"{voice_channel_members} personnes connectées", inline=False)
         embed.timestamp = datetime.datetime.utcnow()
-
         await ctx.send(embed=embed)    
 
 

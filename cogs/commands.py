@@ -42,13 +42,12 @@ class Commands(commands.Cog):
             title="Règlement du Serveur",
             type="rich",
             color=0xffffff,
-            timestamp=datetime.now()  # Utilisation de datetime.now() pour obtenir l'horodatage actuel
+            timestamp=datetime.now()
         )   
         example_embed.add_field(name="", value="1. Restez positif et surtout soyez vigilant, nous sommes sur internet.", inline=False)
         example_embed.add_field(name="", value="2. Pas de spam ni d'autopromotion (invitations de serveurs, publicités, etc.) sans l'autorisation d'un modérateur du serveur, y compris via les MP envoyés aux autres membres.", inline=False)
         example_embed.add_field(name="", value="3. Pas de contenu obscène ou soumis à une limite d'âge, qu'il s'agisse de texte, d'images ou de liens mettant en scène de la nudité, du sexe, de l'hyperviolence ou tout autre contenu explicite perturbant.",inline=False)
         example_embed.add_field(name="", value="4. Éviter les sujets/contenus sensibles ou à tendance polémiques ainsi que la violence verbale. Que ce soit tout ce qui est en lien avec la violence ou qui puisse heurter la sensibilités d’autrui. Nous interdisons tous sujets qui peuvent être jugés polémique en fonction d’un contexte politique.",inline=False)
-
         await ctx.send(embed=example_embed)
 
     @commands.command()

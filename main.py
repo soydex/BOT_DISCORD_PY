@@ -26,12 +26,10 @@ async def on_ready():
         except Exception as e:
             print(f"Failed to load {cog_file}: {e}")
     print(f"We have logged in as {client.user}")
-    
     servers = {guild.id: guild.name for guild in client.guilds}
     print("Server IDs and Names:")
     for guild_id, guild_name in servers.items():
         print(f"Guild ID: {guild_id}, Guild Name: {guild_name}")
-
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=".gg/antimg"))
 
 @client.command()
@@ -48,4 +46,4 @@ async def reload(ctx, arg):
 
 # Run the bot
 if __name__ == "__main__":
-    client.run(secu.TOKEN_soydex)
+    client.run(secu.TOKEN)
