@@ -6,7 +6,7 @@ Ce projet est un bot Discord développé en Python utilisant la bibliothèque `d
 
 1. Clonez le dépôt :
     ```bash
-    git clone <URL_DU_DEPOT>
+    git clone https://github.com/soydex/Bot_AMG_PY.git
     cd Bot_AMG_PY
     ```
 
