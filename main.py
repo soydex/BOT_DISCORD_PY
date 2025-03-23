@@ -46,4 +46,4 @@ async def reload(ctx, arg):
 
 # Run the bot
 if __name__ == "__main__":
-    client.run(secu.TOKEN_soydex)
+    client.run(secu.TOKEN)
