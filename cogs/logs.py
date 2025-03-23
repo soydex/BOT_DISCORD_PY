@@ -19,7 +19,6 @@ class test(commands.Cog):
             embed = discord.Embed(title="Message supprimé", color=discord.Color.red())  # Initialize the embed first
             if message.author.avatar:
                 embed.set_thumbnail(url=message.author.avatar.url)
-            
             embed.add_field(name="Auteur", value=message.author.mention, inline=True)
             embed.add_field(name="Contenu", value=message.content, inline=False)
             embed.set_footer(text=f"ID de l'utilisateur: {message.author.id} • ID du message: {message.id}")
@@ -60,10 +59,8 @@ class test(commands.Cog):
         log_channel = discord.utils.get(member.guild.text_channels, name=LOG_CHANNEL_NAME)
         if log_channel:
             embed = discord.Embed(title="Membre parti", description=f"{member.mention} a quitté le serveur.", color=discord.Color.red())
-            
             avatar_url = member.avatar.url if member.avatar else member.default_avatar.url
             embed.set_thumbnail(url=avatar_url)
-
             embed.set_footer(text=f"ID de l'utilisateur: {member.id}")
             embed.timestamp = datetime.datetime.utcnow()
             await log_channel.send(embed=embed)
@@ -109,7 +106,6 @@ class test(commands.Cog):
             after_roles = set(after.roles)
             added_roles = after_roles - before_roles
             removed_roles = before_roles - after_roles
-
             embed = discord.Embed(title="Modification des rôles", description=f"Modifications des rôles pour {after.display_name}.", color=discord.Color.teal())
             if added_roles:
                 embed.add_field(name="Rôles ajoutés", value=", ".join([role.name for role in added_roles]), inline=False)
@@ -143,8 +139,6 @@ class test(commands.Cog):
             print(f"Command `{ctx.command}` cannot be used in private messages")
         else:
             print(exception)
-
-
 
 async def setup(bot):
     await bot.add_cog(test(bot))
